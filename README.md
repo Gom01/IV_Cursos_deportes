@@ -1,17 +1,17 @@
-# Proyectos - Deportes
+# IV - ProximaSalida
 
-## Cliente - Problema
-Hago trail running y entreno solo, sin entrenador. Me lesiono a menudo, porque no sé si mi próxima salida es buena para mí según lo que hice los días anteriores y cómo estoy en ese momento. 
-Para decidir bien, tendría que pensar a la vez en los kilómetros, el desnivel, cuántas veces salgo a correr, los días de descanso y mi cansancio, y es demasiado difícil hacerlo de memoria. 
-Por eso, muchas veces decido según lo que siento, a veces hago demasiado y me lesiono, y tengo que parar varias semanas, otras veces hago poco y llego mal preparado a mis carreras. Sin embargo, todas mis salidas ya están guardadas en mi reloj, con la distancia, el desnivel y la duración, pero estos datos no me ayudan a elegir qué hacer después. 
-Y no soy el único: muchos corredores aficionados que conozco tienen el mismo problema.
+## El problema
+Me gusta mucho correr, pero entreno solo y elijo mis salidas según lo que siento. Como no sé qué salida es buena para mí, al final me lesiono porque entreno demasiado. Otras veces no estoy preparado para mis carreras. Entonces mi problema es que no sé cómo organizar mi próxima salida, y no soy el único.
 
-## Tarjeta del problemo : 
-No tuve el papel del cliente la semana pasada. 
+Para elegir bien tendría que analizar mis carreras pasadas y calcular lo que he corrido los últimos días con mi cansancio. Es muy difícil hacerlo solo.
 
+Todos mis datos están en mi reloj, pero no me dice qué entrenamiento hacer después. Y el día de una carrera no puedo saber fácilmente si estoy bien preparado.
+
+## Tarjeta del problema : 
+Hice el juego de rol con mi compañero, pero no quedaba papel en clase. Por eso tomé mis notas en un fichero de texto:
 - [Notas del juego de rol](docs/tarjeta.txt)
 
-## Documentación adicional
-- [Conexion en el terminal](docs/ssh_test.png)
-- [Github](docs/ssh_github.png)
+## Configuración
+- [conexión](docs/ssh_test.png)
+- [configuración GitHub](docs/ssh_github.png)
 
