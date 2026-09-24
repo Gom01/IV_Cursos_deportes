@@ -7,7 +7,9 @@ Por eso, muchas veces decido según lo que siento, a veces hago demasiado y me l
 Y no soy el único: muchos corredores aficionados que conozco tienen el mismo problema.
 
 ## Tarjeta del problemo : 
-![Logo](docs/tarjeta.jpg)
+No tenia el papel del cliente durant las classes. 
+
+![Notas del juego de rol](docs/tarjeta.txt)
 
 ## Documentación adicional
 - [Conexion en el terminal](docs/ssh_test.png)
