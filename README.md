@@ -9,7 +9,7 @@ Todos mis datos están en mi reloj, pero no me dice qué entrenamiento hacer des
 
 ## Tarjeta del problema : 
 Hice el juego de rol con mi compañero, pero no quedaba papel en clase. Por eso tomé mis notas en un fichero de texto:
-- [Notas del juego de rol](docs/tarjeta.txt)
+- [Notas del juego de rol](docs/tarjeta.png)
 
 ## Configuración
 - [conexión](docs/ssh_test.png)
