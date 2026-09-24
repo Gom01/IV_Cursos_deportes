@@ -7,9 +7,8 @@ Para elegir bien tendría que analizar mis carreras pasadas y calcular lo que he
 
 Todos mis datos están en mi reloj, pero no me dice qué entrenamiento hacer después. Y el día de una carrera no puedo saber fácilmente si estoy bien preparado.
 
-## Tarjeta del problema : 
-Hice el juego de rol con mi compañero, pero no quedaba papel en clase. Por eso tomé mis notas en un fichero de texto:
-- [Notas del juego de rol](docs/tarjeta.png)
+## Tarjeta del problema :
+![Fotografía de la tarjeta del juego de rol](docs/tarjeta.jpg)
 
 ## Configuración
 - [conexión](docs/ssh_test.png)
