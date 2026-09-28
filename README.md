@@ -2,51 +2,43 @@
 
 ## Problema
 
-Cuando preparo una salida de senderismo en Suiza, sé lo que quiero: por ejemplo 25 km, 1500 m de desnivel positivo y poder llegar y volver en transporte público. Pero no encuentro fácilmente una ruta existente que cumpla todo esto a la vez.
+Corro en Suiza y me gusta entrenar de forma progresiva, muchas veces en sitios que no conozco. Casi siempre sé exactamente la distancia que quiero hacer, el desnivel y más o menos dónde quiero ir. Por ejemplo, sé que quiero correr 17 km con 800 m de desnivel.
 
-No puedo hacerlo a mano porque hay cientos de rutas oficiales, muchas divididas en etapas, y tengo que comprobar varios criterios a la vez: la distancia, el desnivel y si hay una parada cerca del inicio y del final. Para cada ruta tendría que calcular estos datos y después filtrar las que me sirven.
+Ahora mismo, para preparar un recorrido tengo que:
 
-## ¿De dónde viene este problema?
+1. Mirar ideas de recorridos en [AllTrails](https://www.alltrails.com/) para ver lo que ya existe y lo que es interesante (sitios con vistas, etc.). Pero no puedo descargar los datos GPX sin pagar.
+2. Ir a [map.geo.admin.ch](https://map.geo.admin.ch/) de swisstopo y dibujar mi recorrido a mano. Tengo que mirar dónde están las paradas de transporte público y corregir el trazado. Después puedo descargar el GPX, pero tengo que calcular y adaptar yo mismo la distancia y el desnivel.
+3. Enviar el resultado a mi reloj para tener el trazado y poder ir a correr.
 
-Hago trail y senderismo en Valais. Para entrenar, necesito salidas con una distancia y un desnivel concretos, y tengo que poder ir en tren o en autobús.
+Esto me hace perder mucho tiempo (unas 2 horas por semana): primero tengo que encontrar un recorrido que me guste, después crearlo a mano y cambiarlo hasta que tenga la distancia y la dificultad que quiero. Como corro 2 o 3 veces por semana, pierdo mucho tiempo haciendo estos cálculos, y creo que no soy el único. Además, prefiero usar los datos de swisstopo porque son suizos, oficiales y fiables.
 
-Preparo una salida así 2 o 3 veces por semana. Cada vez tengo que abrir las rutas una por una para ver la distancia y el desnivel, y después mirar en un mapa si hay una parada cerca. Esto me lleva fácilmente una hora. Aun así, más o menos 1 de cada 5 salidas no me conviene: es demasiado corta, demasiado dura o no hay autobús para volver.
+## Datos
 
-Ya existen aplicaciones de rutas, pero no están hechas para Suiza. Usan rutas subidas por los usuarios y no los datos oficiales y actualizados de la Confederación.
+En Suiza, la Confederación publica datos oficiales, gratuitos y que se pueden descargar. Hay dos fuentes útiles para este problema:
 
-Muchos corredores y senderistas sin coche tienen el mismo problema.
+1. **Caminos de senderismo (swissTLM3D Wanderwege)**, en [opendata.swiss](https://opendata.swiss/fr/dataset/swisstlm3d-wanderwege/resource/e1b5fac2-fedf-42d4-a2e4-27287c02504b). Es un fichero `.gpkg` con todos los caminos de senderismo de Suiza. Cada camino es una línea de puntos (x, y, z). De este fichero se puede extraer la posición, la altitud, el tipo de camino y su dificultad.
+2. **Paradas de transporte público (Traffic Points)**, en [opentransportdata.swiss](https://data.opentransportdata.swiss/en/dataset/traffic-point-v2). Es un fichero `.csv` con la posición de todas las paradas (autobús, tren, etc.).
 
-## ¿Qué datos existen ya?
+Más detalles sobre los datos: [docs/datos.md](docs/datos.md)
 
-Todos estos datos son oficiales, gratis y se pueden descargar:
+## Análisis
 
-- **Las rutas**: la Oficina Federal de Carreteras (ASTRA) publica «Wanderland Schweiz», con todas las rutas de senderismo nacionales, regionales y locales de Suiza. Se actualiza varias veces al año.
-- **La altitud**: swisstopo publica el modelo de altitud oficial de toda Suiza (swissALTI3D).
-- **Las paradas de transporte público**: opentransportdata.swiss publica la lista oficial de las estaciones y paradas de Suiza, con sus coordenadas.
-
-## ¿Por qué no es un simple «buscar y mostrar»?
-
-Las rutas no dan directamente la distancia, el desnivel ni la duración. Hay que:
-
-1. **Calcular** la distancia, el desnivel y el tiempo estimado a partir de los puntos y de la altitud oficial.
-2. **Encontrar** la parada más cercana al inicio y al final, y comprobar que está a menos de un kilómetro.
-3. **Filtrar y ordenar** las rutas según lo cerca que están de lo que se pide.
+Los caminos de estos ficheros son solo tramos sueltos, no recorridos completos. Hay más de 400 000 tramos que se cruzan entre ellos, así que calcular a mano todas las combinaciones posibles es imposible. Hay que analizar estas combinaciones, calcular la distancia y el desnivel de cada una, comprobar que hay una parada cerca del inicio y del final, y filtrar las que mejor encajan con lo que pido.
 
 ## ¿Por qué en la nube?
 
-Muchos senderistas y corredores tienen la misma necesidad y usan los mismos datos oficiales. Tiene sentido que estos datos y los cálculos estén en un solo sitio, compartido por todos, y que se actualicen cuando la Confederación publica nuevos datos.
+Muchos corredores y senderistas de toda Suiza tienen la misma necesidad y usan los mismos datos oficiales. Además, hay muchísimos datos (cientos de miles de tramos y de puntos en el mapa), así que tiene sentido tenerlos en un solo sitio, compartido por todos.
 
 ## Referencias
 
-- Wanderland Schweiz (ASTRA): https://opendata.swiss/de/dataset/langsamverkehr-wanderland-schweiz
-- swissALTI3D (swisstopo): https://www.swisstopo.admin.ch/fr/modele-altimetrique-swissalti3d
-- Paradas de transporte público: https://opentransportdata.swiss/en/cookbook/masterdata-cookbook/servicepoints/
+- swissTLM3D Wanderwege: https://opendata.swiss/fr/dataset/swisstlm3d-wanderwege/resource/e1b5fac2-fedf-42d4-a2e4-27287c02504b
+- Traffic Points: https://data.opentransportdata.swiss/en/dataset/traffic-point-v2
 
 ## Tarjeta de rol
 
-![Fotografía de la tarjeta de rol](docs/tarjeta.jpg)
+![Fotografía de la tarjeta de rol](img/tarjeta.jpg)
 
 ## Documentación adicional
 
-- [configuración GitHub](docs/ssh_github.png)
-- [configuración SSH](docs/ssh_test.png)
+- [configuración de GitHub](img/ssh_github.png)
+- [configuración de SSH](img/ssh_test.png)
