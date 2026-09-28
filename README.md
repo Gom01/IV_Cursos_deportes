@@ -2,21 +2,32 @@
 
 ## Problema
 
-Corro en Suiza y me gusta entrenar de forma progresiva, muchas veces en sitios que no conozco. Casi siempre sé exactamente la distancia que quiero hacer, el desnivel y más o menos dónde quiero ir. Por ejemplo, sé que quiero correr 17 km con 800 m de desnivel.
+Corro en Suiza y me gusta entrenar de forma progresiva, muchas veces en sitios que no conozco. Siempre sé exactamente la distancia que quiero hacer, el desnivel y desde dónde salgo (en transporte público). Por ejemplo, sé que quiero correr 17 km con 800 m de desnivel y que salgo de una estación de tren concreta. Mi problema es que pierdo mucho tiempo creando un recorrido que encaje con lo que quiero.
 
 Ahora mismo, para preparar un recorrido tengo que:
 
-1. Mirar ideas de recorridos en [AllTrails](https://www.alltrails.com/) para ver lo que ya existe y lo que es interesante (sitios con vistas, etc.). Pero no puedo descargar los datos GPX sin pagar.
-2. Ir a [map.geo.admin.ch](https://map.geo.admin.ch/) de swisstopo y dibujar mi recorrido a mano. Tengo que mirar dónde están las paradas de transporte público y corregir el trazado. Después puedo descargar el GPX, pero tengo que calcular y adaptar yo mismo la distancia y el desnivel.
-3. Enviar el resultado a mi reloj para tener el trazado y poder ir a correr.
+1. Ir a [map.geo.admin.ch](https://map.geo.admin.ch/) de swisstopo y dibujar un recorrido a mano, tramo por tramo, empezando en una estación de tren o una parada de autobús.
+2. Mirar la distancia y el desnivel del recorrido. Si no son los que quiero, añado o quito tramos y vuelvo a mirar. Muchas veces tengo que repetirlo varias veces.
 
-Esto me hace perder mucho tiempo (unas 2 horas por semana): primero tengo que encontrar un recorrido que me guste, después crearlo a mano y cambiarlo hasta que tenga la distancia y la dificultad que quiero. Como corro 2 o 3 veces por semana, pierdo mucho tiempo haciendo estos cálculos, y creo que no soy el único. Además, prefiero usar los datos de swisstopo porque son suizos, oficiales y fiables.
+Este proceso me hace perder mucho tiempo (unas 2 o 3 horas por semana): tengo que dibujar el recorrido a mano y después cambiarlo hasta que tenga la distancia y la dificultad que quiero. Como corro 2 o 3 veces por semana, pierdo mucho tiempo haciendo estos cálculos, y creo que no soy el único. Además, prefiero usar los datos de swisstopo porque son suizos, oficiales y fiables.
+
+## Conceptos
+
+- **Trail:** correr por caminos de montaña o de campo, no por carretera. Normalmente hay subidas y bajadas.
+- **Distancia:** los kilómetros que tiene el recorrido.
+- **Desnivel positivo:** la suma de todos los metros que se suben durante el recorrido. Las bajadas no se cuentan. Por ejemplo, si subo 300 m, bajo 100 m y subo otra vez 200 m, el desnivel positivo es 500 m.
+- **Dificultad:** en Suiza, cada camino tiene una categoría oficial, marcada con colores en las señales:
+  - *Wanderweg* (amarillo): camino fácil, para todo el mundo.
+  - *Bergwanderweg* (blanco-rojo-blanco): camino de montaña, más empinado y estrecho. Hay que tener buen equilibrio.
+  - *Alpinwanderweg* (blanco-azul-blanco): camino alpino, muy difícil. A veces hay que usar las manos.
+- **Tramo:** un trozo de camino entre dos cruces. Los datos oficiales dan los caminos en tramos, no en recorridos completos.
+- **Recorrido:** varios tramos seguidos, desde la salida hasta la llegada.
 
 ## Datos
 
 En Suiza, la Confederación publica datos oficiales, gratuitos y que se pueden descargar. Hay dos fuentes útiles para este problema:
 
-1. **Caminos de senderismo (swissTLM3D Wanderwege)**, en [opendata.swiss](https://opendata.swiss/fr/dataset/swisstlm3d-wanderwege/resource/e1b5fac2-fedf-42d4-a2e4-27287c02504b). Es un fichero `.gpkg` con todos los caminos de senderismo de Suiza. Cada camino es una línea de puntos (x, y, z). De este fichero se puede extraer la posición, la altitud, el tipo de camino y su dificultad.
+1. **Caminos de senderismo (swissTLM3D Wanderwege)**, en [opendata.swiss](https://opendata.swiss/fr/dataset/swisstlm3d-wanderwege/resource/e1b5fac2-fedf-42d4-a2e4-27287c02504b). Es un fichero `.gpkg` con todos los caminos de senderismo de Suiza. Cada camino es una línea de puntos (x, y, z). De este fichero se puede extraer la posición, la altitud y la dificultad. Este fichero solo contiene tramos.
 2. **Paradas de transporte público (Traffic Points)**, en [opentransportdata.swiss](https://data.opentransportdata.swiss/en/dataset/traffic-point-v2). Es un fichero `.csv` con la posición de todas las paradas (autobús, tren, etc.).
 
 Más detalles sobre los datos: [docs/datos.md](docs/datos.md)
