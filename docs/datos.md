@@ -9,7 +9,7 @@
      - `wanderwege`: categoría oficial de dificultad del camino
      - `uuid`: identificador único de cada tramo
 
-   ![opendata.swiss](img/paths.png)
+   ![opendata.swiss](../img/paths.png)
 
    Ejemplo:
 
@@ -30,7 +30,7 @@
      - `height`: altitud de la parada
      - `uicCountryCode`: código del país (85 = Suiza)
 
-   ![opentransportdata.swiss](img/transports.png)
+   ![opentransportdata.swiss](../img/transports.png)
 
    Ejemplo:
 
