@@ -3,11 +3,11 @@
 ## Persona 1: Flavien Gomez
 
 - **Perfil:** 24 años, corredor de nivel aficionado.
-- **Situación:** corre 2 o 3 veces por semana, no tiene coche y le encanta el deporte. Prepara sus recorridos con varias webs.
+- **Situación:** corre 2 o 3 veces por semana, no tiene coche y le encanta el deporte. Prepara sus recorridos dibujándolos a mano, tramo por tramo, en map.geo.admin.ch.
 - **Objetivo:** tener recorridos con una distancia y un desnivel precisos para mejorar.
 - **Molestia:** encontrar caminos que cumplan sus criterios es lento y pesado.
-- **Beneficio esperado:** no tener que perder tiempo creando sus recorridos. Ahorra unas 2 horas por semana.
-- **Criterios importantes:** la distancia, la dificultad y el acceso en transporte público.
+- **Beneficio esperado:** no tener que perder tiempo creando sus recorridos. Ahorra unas 2 o 3 horas por semana.
+- **Criterios importantes:** la distancia, el desnivel, la dificultad y la estación de salida y de llegada (en transporte público).
 
 ## Persona 2: Christine
 
