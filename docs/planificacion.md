@@ -15,7 +15,7 @@
 
 - Creo `Tramo` y `Parada` a partir de líneas reales de los ficheros de swisstopo y de opentransportdata, y compruebo que todos los datos están bien guardados (puntos, altitud, dificultad, nombre y posición).
 - Creo unos `Criterios` con una petición real mía: 17 km, 800 m de desnivel y dos estaciones reales.
-- Creo un `Recorrido` con tramos reales del fichero que están seguidos.
+- Creo a mano un `Recorrido` con tramos reales del fichero que están seguidos
 
 **Historias de usuario:** HU1
 
