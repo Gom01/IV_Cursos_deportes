@@ -1,6 +1,6 @@
 # Planificación
 
-## Hito 0: modelo del problema
+## Hito 0: Modelo del problema
 
 **Producto:** mi código con los elementos del problema, leídos desde los ficheros oficiales, sin cálculos todavía:
 
@@ -19,7 +19,7 @@
 
 **Historias de usuario:** HU1
 
-## Hito 1: distancia y desnivel de un recorrido
+## Hito 1: Distancia y desnivel de un recorrido
 
 **Producto:** mi código que calcula la distancia y el desnivel positivo de un tramo, y después de un recorrido (varios tramos seguidos, teniendo en cuenta el sentido en que se recorre cada tramo).
 
@@ -32,12 +32,12 @@
 
 **Historias de usuario:** HU2
 
-## Hito 2: construir un recorrido entre dos estaciones
+## Hito 2: Recorridos entre dos estaciones
 
 **Producto:** mi código que une tramos para crear recorridos entre la estación de salida y la estación de llegada, que cumplen lo que pido:
 
 - **Estaciones:** el recorrido empieza y termina a menos de 500 m de las estaciones elegidas (unos 5 minutos andando, porque Christine no quiere andar mucho hasta el camino).
-- **Distancia y desnivel:** se parecen a lo que pido, más o menos un 10 %. Por ejemplo, entre 15 y 19 km si pido 17 km, eso me vale para entrenar.
+- **Distancia y desnivel:** se parecen a lo que pido, más o menos un 10 %. Por ejemplo, entre 15,3 y 18,7 km si pido 17 km, eso me vale para entrenar.
 - **Dificultad:** ningún tramo es más difícil que la dificultad máxima elegida.
 
 Los recorridos se ordenan del más parecido al menos parecido a lo que pido (primero el que tiene la menor diferencia total en distancia y desnivel).
