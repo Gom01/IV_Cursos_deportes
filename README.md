@@ -79,11 +79,16 @@ Los caminos de estos ficheros son solo tramos sueltos, no recorridos completos. 
 
 ## ¿Por qué en la nube?
 
-Muchos corredores y senderistas de toda Suiza tienen la misma necesidad y usan los mismos datos oficiales. Además, hay muchísimos datos (cientos de miles de tramos y de puntos en el mapa), así que tiene sentido tenerlos en un solo sitio, compartido por todos.
+Muchos corredores y senderistas de toda Suiza tienen la misma necesidad y usan los mismos datos oficiales. Además, hay muchísimos datos (cientos de miles de tramos y de puntos en el mapa), así que tiene sentido tenerlos en un solo sitio, compartido por todos. Así, los usuarios pueden usarlo desde su móvil, aunque tengan poco espacio en él.
 
+## Planificación
+- [User journey](docs/user-journey.md)
+- [Personas](docs/personas.md)
+- [Hitos](docs/planificacion.md)
+- [Historia de usarios](docs/historias-de-usuario.md)
 ## Tarjeta de rol
 
-![Fotografía de la tarjeta de rol](img/tarjeta.jpg)
+- [Fotografía de la tarjeta de rol](img/tarjeta.jpg)
 
 ## Documentación adicional
 
