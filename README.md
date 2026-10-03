@@ -84,13 +84,8 @@ Muchos corredores y senderistas de toda Suiza tienen la misma necesidad y usan l
 ## Planificación
 - [User journey](docs/user-journey.md)
 - [Personas](docs/personas.md)
-- [Hitos](docs/planificacion.md) ([ver en GitHub](https://github.com/Gom01/IV_Cursos_deportes/milestones))
-- Historias de usuario:
-  - [HU1: Trabajar con los datos oficiales](https://github.com/Gom01/IV_Cursos_deportes/issues/2)
-  - [HU2: Distancia y desnivel de un recorrido](https://github.com/Gom01/IV_Cursos_deportes/issues/3)
-  - [HU3: Recorridos entre dos estaciones](https://github.com/Gom01/IV_Cursos_deportes/issues/4)
-  - [HU4: No acabar en un camino demasiado difícil](https://github.com/Gom01/IV_Cursos_deportes/issues/5)
-  - [Historia de usarios](docs/historias-de-usuario.md)
+- [Hitos](docs/planificacion.md)
+- [Historia de usarios](docs/historias-de-usuario.md)
 ## Tarjeta de rol
 
 - [Fotografía de la tarjeta de rol](img/tarjeta.jpg)

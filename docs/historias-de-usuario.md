@@ -1,5 +1,7 @@
 # Historias de usuario
 
+Datos: [swissTLM3D Wanderwege y Traffic Points](../README.md#datos). Contexto: [user journey](user-journey.md).
+
 ## [HU1] Caminos señalizados y paradas reales ([#2](https://github.com/Gom01/IV_Cursos_deportes/issues/2))
 
 Flavien: como corredor, quiero que mis recorridos pasen solo por caminos señalizados y empiecen y terminen en paradas que existen de verdad, para correr solo por caminos señalizados y seguros.
