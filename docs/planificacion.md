@@ -2,31 +2,31 @@
 
 ## Hito 0: Modelo del problema
 
-**Producto:** el modelo del problema en código, sin lógica de negocio, en `src/`. Se entrega mediante un pull request a `main` asociado al Hito 0 en GitHub, que cierra los issues de la HU1.
+**Producto:** el modelo de los conceptos que aparecen en las historias de usuario, sin lógica de negocio.
 
 **Validación:**
 
-- El código es sintácticamente correcto.
-- Cada elemento del modelo corresponde a un concepto descrito en el README.
-- Con el modelo se pueden representar datos reales de los ficheros de swisstopo y de opentransportdata, y se comprueba que se guardan bien.
-- Con el modelo se puede representar una petición real mía (17 km, 800 m de desnivel y dos estaciones reales) y un recorrido hecho a mano con tramos reales del fichero que están seguidos.
+- Cada elemento del modelo corresponde a un concepto que aparece en las HU (tramo, parada, recorrido…): para cada uno se puede indicar en qué HU aparece.
+- Con el modelo se puede representar un tramo real de swisstopo y una parada real de opentransportdata, y al compararlos con los mismos en las fuentes oficiales tienen los mismos datos.
+
 
 **Historias de usuario:** HU1
 
 ## Hito 1: Distancia y desnivel de un recorrido
 
-**Producto:** la primera parte de la lógica de negocio sobre el modelo del Hito 0, con sus tests automáticos, en `src/` y `tests/`. Se entrega mediante un pull request a `main` asociado al Hito 1 en GitHub, que cierra los issues de la HU2.
+**Producto:** la primera parte de la lógica de negocio sobre el modelo del Hito 0, con sus tests automáticos.
 
 **Validación:**
 
 - Elijo algunos tramos reales del fichero y dibujo el mismo camino en map.geo.admin.ch. Apunto la distancia y el desnivel que muestra.
 - Estos valores se escriben en tests automáticos, que comprueban que mi código da el mismo resultado, con menos de un 5 % de diferencia.
 
+
 **Historias de usuario:** HU2
 
 ## Hito 2: Recorridos entre dos estaciones
 
-**Producto:** la lógica de negocio que resuelve una petición entre dos estaciones, sobre lo entregado en los hitos anteriores, con sus tests automáticos, en `src/` y `tests/`. Se entrega mediante un pull request a `main` asociado al Hito 2 en GitHub, que cierra los issues de la HU3 y la HU4.
+**Producto:** la lógica de negocio que resuelve una petición entre dos estaciones, sobre lo entregado en los hitos anteriores, con sus tests automáticos.
 
 **Validación:** tests automáticos con los datos reales de una zona pequeña cerca de mi casa.
 
