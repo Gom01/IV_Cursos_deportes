@@ -1,7 +1,5 @@
 # Planificación
 
-## Hito 0: Modelo del problema
-
 ## Hito 0
 
 **Producto:** una biblioteca que resuelve los issues sacados de la HU1, sin cálculos ni lógica de negocio.
@@ -15,7 +13,7 @@
 
 ## Hito 1: Distancia y desnivel de un recorrido
 
-**Producto:** la primera parte de la lógica de negocio sobre el modelo del Hito 0, con sus tests automáticos.
+**Producto:** la primera parte de la lógica de negocio sobre lo entregado en el Hito 0, con sus tests automáticos.
 
 **Validación:**
 
