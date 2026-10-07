@@ -2,13 +2,14 @@
 
 ## Hito 0: Modelo del problema
 
-**Producto:** el modelo de los conceptos que aparecen en las historias de usuario, sin lógica de negocio.
+## Hito 0
+
+**Producto:** una biblioteca que resuelve los issues sacados de la HU1, sin cálculos ni lógica de negocio.
 
 **Validación:**
 
-- Cada elemento del modelo corresponde a un concepto que aparece en las HU (tramo, parada, recorrido…): para cada uno se puede indicar en qué HU aparece.
-- Con el modelo se puede representar un tramo real de swisstopo y una parada real de opentransportdata, y al compararlos con los mismos en las fuentes oficiales tienen los mismos datos.
-
+- Cada parte del código está ligada a un issue sacado de la HU1, mediante un commit que explica qué issue resuelve.
+- Los issues son problemas presentes en la HU1, no tareas.
 
 **Historias de usuario:** HU1
 
