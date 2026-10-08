@@ -2,42 +2,30 @@
 
 ## Hito 0
 
-**Producto:** una biblioteca que resuelve los issues sacados de la HU1, sin cálculos ni lógica de negocio.
+Hito interno, para el objetivo 2. Trabaja solo con la [HU1](historias-de-usuario.md).
 
-**Validación:**
+**Producto:** código sin lógica de negocio. Cada parte del código sale de un issue en el que se ha analizado la HU1. Para analizar el problema se usa el diseño dirigido por el dominio
 
-- Cada parte del código está ligada a un issue sacado de la HU1, mediante un commit que explica qué issue resuelve.
-- Los issues son problemas presentes en la HU1, no tareas.
+**Validación:** el hito es válido si:
 
-**Historias de usuario:** HU1
+- Cada issue sale de la HU1 y es un problema, no una tarea.
+- Cada parte del código viene de un issue, y el issue explica por qué es así.
+- Los issues usan las mismas palabras del problema, para que quien programa y yo entendamos lo mismo.
+- Se han pensado los errores que pueden pasar al crear cada parte.
+- Cada commit dice qué issue resuelve.
 
-## Hito 1: Distancia y desnivel de un recorrido
+## Hito 1
 
-**Producto:** la primera parte de la lógica de negocio sobre lo entregado en el Hito 0, con sus tests automáticos.
+Hito interno, para el objetivo 4. Sigue con el problema de la [HU1](historias-de-usuario.md), a partir de lo hecho en el Hito 0. El problema se divide en problemas más pequeños que se pueden comprobar con tests.
 
-**Validación:**
+**Producto:** el código del Hito 0 con la lógica de negocio que resuelve la HU1, y sus tests, que se ejecutan con una sola orden.
 
-- Elijo algunos tramos reales del fichero y dibujo el mismo camino en map.geo.admin.ch. Apunto la distancia y el desnivel que muestra.
-- Estos valores se escriben en tests automáticos, que comprueban que mi código da el mismo resultado, con menos de un 5 % de diferencia.
+**Validación:** todos los tests pasan con esa orden y comprueban el problema de la HU1 tal como está descrito, con datos reales de swisstopo y de opentransportdata. Además compruebo que:
 
-
-**Historias de usuario:** HU2
-
-## Hito 2: Recorridos entre dos estaciones
-
-**Producto:** la lógica de negocio que resuelve una petición entre dos estaciones, sobre lo entregado en los hitos anteriores, con sus tests automáticos.
-
-**Validación:** tests automáticos con los datos reales de una zona pequeña cerca de mi casa.
-
-- Con una petición real entre dos estaciones reales (por ejemplo 10 km y 500 m de desnivel), sale al menos un recorrido.
-- Todos los recorridos que salen empiezan y terminan a menos de 500 m de las estaciones elegidas (unos 5 minutos andando, porque Christine no quiere andar mucho hasta el camino).
-- Todos tienen una distancia y un desnivel a más o menos un 10 % de lo que pido (por ejemplo, entre 15,3 y 18,7 km si pido 17 km).
-- Ningún recorrido tiene un tramo más difícil que la dificultad máxima elegida, y sus tramos están seguidos.
-- El primer recorrido es el que tiene la menor diferencia total con lo que pido (en distancia y desnivel).
-- Una petición imposible (por ejemplo 200 km en esa zona) no da ningún recorrido.
-
-**Historias de usuario:** HU3, HU4
+- Cada test viene de un issue, y cada issue de la HU1.
+- Los tests también comprueban los errores posibles.
+- Cada commit dice qué issue resuelve.
 
 ## Más adelante
 
-Estos tres hitos son internos: es código para mí, el desarrollador. Después vendrá el primer producto externo: un servicio en la nube que cualquier corredor o senderista pueda usar.
+Después de estos dos hitos internos vendrá el primer producto para los usuarios: un servicio en la nube.
