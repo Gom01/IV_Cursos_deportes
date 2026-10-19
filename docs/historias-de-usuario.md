@@ -4,6 +4,8 @@
 
 Soy Flavien, corro 2 o 3 veces por semana en Suiza y no tengo coche. Antes de cada salida sé exactamente lo que quiero: por ejemplo, 17 km con 800 m de [desnivel positivo](../README.md#conceptos), saliendo de una estación y llegando a otra (o a la misma). Lo que no sé es qué recorrido hacer.
 
+No necesito exactamente esa distancia y ese desnivel: me vale un recorrido que se acerque, con un margen de ±1 km y ±50 m. Además, acepto caminar hasta 500 m entre la parada y el inicio o el final del camino.
+
 Hoy lo dibujo a mano en map.geo.admin.ch, [tramo](../README.md#conceptos) por tramo, y después añado o quito tramos hasta que la distancia y el desnivel se parecen a lo que quiero. Pierdo unos 60 minutos cada vez, como explico en [mi journey](user-journey.md). La red tiene más de 400 000 tramos sueltos, así que no puedo probar todas las combinaciones.
 
 La información que necesito está en los [datos oficiales](../README.md#datos): los tramos de swisstopo (con sus puntos y su altitud) y las paradas de opentransportdata (con su posición).
