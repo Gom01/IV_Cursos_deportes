@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from cursodeportes.geometria_tramo import GeometriaTramo
 
 
-@dataclass
+@dataclass(eq=False)
 class Tramo:
-    __uuid: str
-    __geometria: GeometriaTramo
+    _uuid: str
+    _geometria: GeometriaTramo
