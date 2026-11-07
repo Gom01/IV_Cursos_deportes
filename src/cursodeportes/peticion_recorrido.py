@@ -6,7 +6,7 @@ MARGEN_DESNIVEL_M: Final[float] = 50.0
 
 @dataclass(frozen=True)
 class PeticionRecorrido:
-    __distancia: float
-    __desnivel_positivo: float
-    __parada_origen_id: str
-    __parada_destino_id: str
+    _distancia: float
+    _desnivel_positivo: float
+    _parada_origen_id: str
+    _parada_destino_id: str
