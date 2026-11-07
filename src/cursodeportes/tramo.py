@@ -4,5 +4,5 @@ from cursodeportes.geometria_tramo import GeometriaTramo
 
 @dataclass
 class Tramo:
-    uuid: str
-    geometria: GeometriaTramo
+    __uuid: str
+    __geometria: GeometriaTramo
