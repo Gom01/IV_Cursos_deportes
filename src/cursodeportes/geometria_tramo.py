@@ -6,4 +6,4 @@ MIN_PUNTOS_GEOMETRIA: Final[int] = 2
 
 @dataclass(frozen=True)
 class GeometriaTramo:
-    __puntos: tuple[PuntoLV95, ...]
+    _puntos: tuple[PuntoLV95, ...]
