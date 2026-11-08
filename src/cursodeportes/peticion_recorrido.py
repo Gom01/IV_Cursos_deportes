@@ -11,4 +11,3 @@ class PeticionRecorrido:
     _desnivel_positivo: float
     _parada_origen_id: str
     _parada_destino_id: str
-  
