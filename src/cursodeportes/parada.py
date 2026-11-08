@@ -7,3 +7,4 @@ class Parada:
     _parent_sloid_service_point: str
     _designation_official: str
     _posicion: PosicionLV95
+    
