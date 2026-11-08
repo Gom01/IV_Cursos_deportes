@@ -5,4 +5,3 @@ from dataclasses import dataclass
 class PosicionLV95:
     _lv95_east: float
     _lv95_north: float
-    
