@@ -4,6 +4,7 @@ from typing import Final
 
 MIN_PUNTOS_GEOMETRIA: Final[int] = 2
 
+
 @dataclass(eq=False)
 class Tramo:
     _uuid: str
