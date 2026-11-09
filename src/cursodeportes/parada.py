@@ -1,9 +1,9 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from cursodeportes.posicion_lv95 import PosicionLV95
 
 
-@dataclass(eq=False)
+@dataclass
 class Parada:
-    _parent_sloid_service_point: str
-    _designation_official: str
-    _posicion: PosicionLV95
+    _identificador: str
+    _nombre: str = field(compare=False)
+    _posicion: PosicionLV95 = field(compare=False)
