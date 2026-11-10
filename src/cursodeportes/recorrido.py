@@ -5,6 +5,6 @@ from typing import Final
 DISTANCIA_MAXIMA_PARADA_M: Final[float] = 500.0
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, eq=True)
 class Recorrido:
     _tramo_ids: tuple[str, ...]
