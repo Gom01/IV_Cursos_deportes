@@ -5,7 +5,7 @@ from typing import Final
 MIN_PUNTOS_GEOMETRIA: Final[int] = 2
 
 
-@dataclass
+@dataclass(eq=True)
 class Tramo:
     _uuid: str
     _geometria: tuple[PuntoLV95, ...] = field(compare=False)
