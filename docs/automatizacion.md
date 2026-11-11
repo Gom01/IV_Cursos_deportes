@@ -137,7 +137,7 @@ Mediciones del 11 de noviembre de 2026, media de 3 intentos.
 
 | Herramienta | Versión | Instalar, `user` (s) | Tarea, `user` (s) | Total `user` (s) |
 |---|---|---|---|---|
-| just | | | | |
+| just | 1.59.0 | 0.64 | | |
 | doit | | | | |
 | Poe the Poet | 0.49.0 | 0.61 | | |
 | Taskipy | 1.14.1 | 0.64 | | |
