@@ -139,7 +139,7 @@ Mediciones del 11 de noviembre de 2026, media de 3 intentos.
 |---|---|---|---|---|
 | just | | | | |
 | doit | | | | |
-| Poe the Poet | | | | |
+| Poe the Poet | 0.49.0 | 0.61 | | |
 | Taskipy | | |  |  |
 | Task | | |  |  |
 
