@@ -1,0 +1,21 @@
+[project]
+name = "cursos-deportes"
+version = "0.1.0"
+requires-python = ">=3.14"
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.poe]
+executor = "uv"
+
+[tool.poe.tasks.install]
+cmd = "uv sync"
+executor = "simple"
+
+[tool.poe.tasks.test]
+cmd = "pytest"
+ignore_fail = [5]
+
+[tool.poe.tasks.check]
+cmd = "python -m compileall -q -x '\\.venv' ."
