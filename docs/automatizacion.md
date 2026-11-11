@@ -68,7 +68,7 @@ Mediciones del 10 de noviembre de 2026, media de 3 intentos.
 | uv + Poe the Poet | 0.13.7 + 0.49.0 | 21.10 | 39.66 |60.76 |
 | Poetry + Poe the Poet | 2.5.1 + 0.49.0 | 131.29 |  33.11| 164.40 |
 
-La red cambió mucho durante las pruebas. El tiempo `user`, en cambio, casi no depende de la red, porque es el tiempo en el que la herramienta calcula de verdad. Como los tiempos reales varían demasiado, me fío sobre todo del tiempo `user` para comparar las herramientas.
+La red cambió mucho durante las pruebas. Por ejemplo, la tarea con uv tardó entre 8.8 s y 72.8 s según el intento. El tiempo `user`, en cambio, casi no depende de la red, porque es el tiempo en el que la herramienta calcula de verdad. Como los tiempos reales varían demasiado, me fío sobre todo del tiempo `user` para comparar las herramientas.
 
 | Herramienta           | Instalar la herramienta, `user` (s) | Lanzar la tarea, `user` (s) | Total `user` (s) |
 | -------| --------- | ----------- | ----------- |
@@ -95,3 +95,13 @@ Capturas de pantalla de las mediciones:
 ### 5.4 Poetry + Poe the Poet
 ![poetry1](../img/poetry1.png)
 ![poetry2](../img/poetry2.png)
+
+## 6. Elección
+
+Elijo uv con Poe the Poet.
+
+Con el tiempo total, uv + Poe (60.76 s) y PDM (58.87 s) son casi iguales. La diferencia es de 2 s, mientras que la red hizo variar una misma medición entre 8.8 s y 72.8 s según el intento. Por eso no puedo separarlos con este tiempo. Hatch y Poetry son más lentos.
+
+Con el tiempo `user`, uv + Poe es el más rápido: 4.66 s, mientras que los demás están entre 16 y 21 s. Este tiempo casi no depende de la red, así que es mi medición más fiable.
+
+uv + Poe son dos herramientas en lugar de una. Pero incluso siendo dos, se instalan más rápido que PDM solo (21.10 s frente a 35.05 s). Las dos se configuran en `pyproject.toml`, y uv respeta el estándar, así que podré cambiar de herramienta más adelante si hace falta.
