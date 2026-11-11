@@ -66,7 +66,7 @@ Mediciones del 10 de noviembre de 2026, media de 3 intentos.
 | PDM | 2.29.7 | 35.05 | 23.82 | 58.87 |
 | Hatch | 1.18.2 | 117.04 | 14.77 | 131.81 |
 | uv + Poe the Poet | 0.13.7 + 0.49.0 | 21.10 | 39.66 |60.76 |
-| Poetry + Poe the Poet | 2.5.1 + 0.49.0 | | | |
+| Poetry + Poe the Poet | 2.5.1 + 0.49.0 | 131.29 |  33.11| 164.40 |
 
 La red cambió mucho durante las pruebas. El tiempo `user`, en cambio, casi no depende de la red, porque es el tiempo en el que la herramienta calcula de verdad. Como los tiempos reales varían demasiado, me fío sobre todo del tiempo `user` para comparar las herramientas.
 
@@ -75,7 +75,7 @@ La red cambió mucho durante las pruebas. El tiempo `user`, en cambio, casi no d
 | PDM    |  10.07     |  10.55     |  20.62       |
 |Hatch   |  12.87    |   3.78      |   16.65      |
 | uv + Poe the Poet  |   2.86 |   1.80 |    4.66         |
-| Poetry + Poe the Poet |   | | | 
+| Poetry + Poe the Poet |   15.54|4.26 |19.80 | 
 
 Capturas de pantalla de las mediciones:
 
@@ -91,3 +91,7 @@ Capturas de pantalla de las mediciones:
 ### 5.3 uv + Poe the Poet
 ![uv1](../img/uv1.png)
 ![uv2](../img/uv2.png)
+
+### 5.4 Poetry + Poe the Poet
+![poetry1](../img/poetry1.png)
+![poetry2](../img/poetry2.png)
