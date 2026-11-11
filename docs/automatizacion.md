@@ -39,7 +39,6 @@ He sacado la lista de la guía oficial de Python: https://packaging.python.org/e
 
 PDM y Hatch también saben lanzar tareas. uv y Poetry no, así que he añadido Poe the Poet para ellos (https://poethepoet.natn.io/).
 
-Lo he elegido en lugar de un Taskfile o un Makefile porque se instala con pip como las demás herramientas, sus tareas también van en `pyproject.toml`, y funciona con uv y con Poetry.
 
 ## 4. Escenario de prueba
 
@@ -98,7 +97,7 @@ Capturas de pantalla de las mediciones:
 
 ## 6. Elección
 
-Elijo uv con Poe the Poet.
+Elijo uv.
 
 Con el tiempo total, uv + Poe (60.76 s) y PDM (58.87 s) son casi iguales. La diferencia es de 2 s, mientras que la red hizo variar una misma medición entre 8.8 s y 72.8 s según el intento. Por eso no puedo separarlos con este tiempo. Hatch y Poetry son más lentos.
 
