@@ -64,7 +64,7 @@ Mediciones del 10 de noviembre de 2026, media de 3 intentos.
 | Herramienta | Versión | Instalar la herramienta (s) | Lanzar la tarea (s) | Total (s) |
 | --------------------- | --------------- | --------------------- | ------------------- | --------- |
 | PDM | 2.29.7 | 35.05 | 23.82 | 58.87 |
-| Hatch | 1.18.2 | | | |
+| Hatch | 1.18.2 | 117.04 | 14.77 | 131.81 |
 | uv + Poe the Poet | 0.13.7 + 0.49.0 | | | |
 | Poetry + Poe the Poet | 2.5.1 + 0.49.0 | | | |
 
@@ -72,8 +72,8 @@ La red cambió mucho durante las pruebas. El tiempo `user`, en cambio, casi no d
 
 | Herramienta           | Instalar la herramienta, `user` (s) | Lanzar la tarea, `user` (s) | Total `user` (s) |
 | -------| --------- | ----------- | ----------- |
-| PDM    |  10.7     |  10.55     |  20.62       |
-|Hatch   |           |             |             |
+| PDM    |  10.07     |  10.55     |  20.62       |
+|Hatch   |  12.87    |   3.78      |   16.65      |
 | uv + Poe the Poet  |    |    |             |
 | Poetry + Poe the Poet |   | | | 
 
@@ -82,3 +82,8 @@ Capturas de pantalla de las mediciones:
 ### 5.1 PDM
 ![PDM1](../img/PDM1.png)
 ![PDM2](../img/PDM2.png)
+
+
+### 5.2 Hatch
+![Hatch1](../img/hatch1.png)
+![Hatch2](../img/hatch2.png)
