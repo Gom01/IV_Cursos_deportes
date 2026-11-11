@@ -104,7 +104,7 @@ Con el tiempo total, uv + Poe (60.76 s) y PDM (58.87 s) son casi iguales. La dif
 
 Con el tiempo `user`, uv + Poe es el más rápido: 4.66 s, mientras que los demás están entre 16 y 21 s. Este tiempo casi no depende de la red, así que es mi medición más fiable.
 
-uv + Poe son dos herramientas en lugar de una. Pero incluso siendo dos, se instalan más rápido que PDM solo (21.10 s frente a 35.05 s). Las dos se configuran en `pyproject.toml`, y uv respeta el estándar, así que podré cambiar de herramienta más adelante si hace falta.
+uv + Poe son dos herramientas en lugar de una. Pero incluso siendo dos, se instalan más rápido que PDM solo (21.10 s frente a 35.05 s), y uv respeta el estándar, así que podré cambiar de herramienta más adelante si hace falta. La herramienta de tareas la elijo en la parte 8.
 
 ## 7. Herramienta de tareas
 
@@ -113,7 +113,7 @@ Aquí la comparo con otras herramientas.
 
 uv no gestiona las tareas por sí solo (https://github.com/astral-sh/uv/issues/5903). En esa discusión se citan Poe the Poet, taskipy, just y doit. He añadido Task, que era otra opción que había considerado.
 
-Make queda fuera: mi prueba mide el tiempo para añadir la herramienta al proyecto con uv, y Make no se puede añadir así porque no es un paquete de Python.
+Make queda fuera: mi prueba mide el tiempo para añadir la herramienta al proyecto con uv, y Make no se puede añadir así porque no es un paquete de Python (https://www.gnu.org/software/make/).
 
 | Herramienta | Paquete | Fuente |
 |---|---|---|
@@ -129,7 +129,7 @@ Mantengo las mismas condiciones que en la parte 4.
 
 Para cada herramienta, mido el tiempo para añadirla al proyecto con uv, vaciando la caché antes de cada intento.
 
-Para las 3 herramientas más rápidas, mido también el tiempo para lanzar la tarea `lint`, que revisa el código con ruff.
+Para las 4 herramientas más rápidas, mido también el tiempo para lanzar la tarea `lint`, que revisa el código con ruff.
 
 ### Resultados
 
@@ -137,10 +137,10 @@ Mediciones del 11 de noviembre de 2026, media de 3 intentos.
 
 | Herramienta | Versión | Instalar, `user` (s) | Tarea, `user` (s) | Total `user` (s) |
 |---|---|---|---|---|
-| just | 1.59.0 | 0.64 | | |
-| doit | 0.37.0 | 0.43 | | |
-| Poe the Poet | 0.49.0 | 0.61 | | |
-| Taskipy | 1.14.1 | 0.64 | - | - |
+| Poe the Poet | 0.49.0 | 0.61 | 0.35 | 0.96 |
+| Taskipy | 1.14.1 | 0.64 | 0.37 | 1.01 |
+| just | 1.59.0 | 0.64 | 0.02 | 0.66 |
+| doit | 0.37.0 | 0.43 | 0.32 | 0.75 |
 | Task | 3.54.0 | 1.55 | - | - |
 
 ![poe](../img/poe.png)
@@ -148,3 +148,10 @@ Mediciones del 11 de noviembre de 2026, media de 3 intentos.
 ![just](../img/just.png)
 ![doit](../img/doit.png)
 ![task](../img/task.png)
+![lint](../img/lint.png)
+
+## 8. Elección de la herramienta de tareas
+
+Elijo just. Es el más rápido en tiempo `user`: 0.66 s en total, frente a 0.75 s para doit, 0.96 s para Poe the Poet y 1.01 s para Taskipy. Tarda un poco más en instalarse que doit, pero lanza la tarea unas 16 veces más rápido (0.02 s frente a 0.32 s).
+
+Mi elección final es uv para las dependencias y just para las tareas.
