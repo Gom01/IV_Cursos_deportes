@@ -95,3 +95,30 @@ Muchos corredores y senderistas de toda Suiza tienen la misma necesidad y usan l
 
 - [configuración de GitHub](img/ssh_github.png)
 - [configuración de SSH](img/ssh_test.png)
+
+## Instalación y tareas
+
+### Requisitos
+
+Hay que instalarlos una sola vez, fuera del proyecto:
+
+- Python 3.14.
+- uv (gestor de dependencias) y just (herramienta de tareas):
+
+  ```bash
+  pip install uv rust-just
+  ```
+
+### Tareas
+
+```bash
+just install
+just test
+just check
+```
+
+- `just install`: crea el entorno virtual e instala las dependencias de desarrollo, con las versiones fijadas en `uv.lock`.
+- `just test`: lanza los tests con pytest. No hay test en este momento.
+- `just check`: comprueba solo la sintaxis del código, incluidas las entidades del modelo. Compila los ficheros sin ejecutarlos, así que detecta los errores de sintaxis sin lanzar el programa.
+
+- [docs/automatizacion.md](docs/automatizacion.md)
