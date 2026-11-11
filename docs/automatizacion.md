@@ -30,7 +30,7 @@ He sacado la lista de la guía oficial de Python: https://packaging.python.org/e
 | Herramienta | ¿Se queda? | Motivo | Fuente |
 |---|---|---|---|
 | pip | No | Instala paquetes, pero no gestiona ni el entorno ni las tareas. | https://pip.pypa.io/en/stable/user_guide/ |
-| pip-tools | No | No gestiona ni el entorno ni las tareas, y su lockfile es un `requirements.txt`. | https://github.com/pypa/pip-tools |
+| pip-tools | No | No gestiona ni el entorno ni las tareas, y su lockfile es un `requirements.txt`. | https://pip-tools.pypa.io/en/stable/ |
 | Pipenv | No | Usa su propio fichero, el `Pipfile`, que no es un estándar. | https://pipenv.pypa.io/en/latest/pipfile.html |
 | Poetry | Sí | Usa `pyproject.toml`. | https://python-poetry.org/docs/pyproject/ |
 | PDM | Sí | Usa `pyproject.toml`. | https://pdm-project.org/latest/usage/dependency/ |
@@ -63,11 +63,22 @@ Mediciones del 10 de noviembre de 2026, media de 3 intentos.
 
 | Herramienta | Versión | Instalar la herramienta (s) | Lanzar la tarea (s) | Total (s) |
 | --------------------- | --------------- | --------------------- | ------------------- | --------- |
-| PDM | 2.29.7 | | | |
+| PDM | 2.29.7 | 35.05 | 23.82 | 58.87 |
 | Hatch | 1.18.2 | | | |
 | uv + Poe the Poet | 0.13.7 + 0.49.0 | | | |
 | Poetry + Poe the Poet | 2.5.1 + 0.49.0 | | | |
 
+La red cambió mucho durante las pruebas. El tiempo `user`, en cambio, casi no depende de la red, porque es el tiempo en el que la herramienta calcula de verdad. Como los tiempos reales varían demasiado, me fío sobre todo del tiempo `user` para comparar las herramientas.
+
+| Herramienta           | Instalar la herramienta, `user` (s) | Lanzar la tarea, `user` (s) | Total `user` (s) |
+| -------| --------- | ----------- | ----------- |
+| PDM    |  10.7     |  10.55     |  20.62       |
+|Hatch   |           |             |             |
+| uv + Poe the Poet  |    |    |             |
+| Poetry + Poe the Poet |   | | | 
+
 Capturas de pantalla de las mediciones:
 
-<!-- Imágenes -->
+### 5.1 PDM
+![PDM1](../img/PDM1.png)
+![PDM2](../img/PDM2.png)
