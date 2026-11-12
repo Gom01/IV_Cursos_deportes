@@ -7,4 +7,4 @@ DISTANCIA_MAXIMA_PARADA_M: Final[float] = 500.0
 
 @dataclass(frozen=True, eq=True)
 class Recorrido:
-    puntos: tuple[PuntoLV95, ...]
+    _tramos_ids: tuple[str, ...]
