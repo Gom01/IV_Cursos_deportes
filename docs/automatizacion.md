@@ -167,3 +167,33 @@ Screenshots of the measurements:
 
 ### 7.3 Invoke
 ![Invoke1](../img/invoke1.png)
+
+### Results
+
+Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real` / `user` time, in seconds.
+
+| Tool | Version | Install the project + run the task |
+|---|---|---|
+| Poe the Poet | 0.49.0 | 2.89 / 1.22 |
+| Taskipy | 1.14.1 | 2.80 / 1.15 |
+| just | 1.59.0 | 3.18 / 1.12 |
+| Invoke | 3.0.3 | 2.67 / 1.22 |
+
+The results are almost the same: the difference is about 0.1 s in `user` time, which is less than the variation between attempts. So I also measure the time to run the `test` task alone, with the project already installed. This matters because the task is run much more often than the installation.
+
+| Tool | Run the task only |
+|---|---|
+| Poe the Poet | 0.51 / 0.37 |
+| Taskipy | 0.42 / 0.37 |
+| just | 0.31 / 0.26 |
+| Invoke | 0.48 / 0.41 |
+
+![Run the task only](../img/total_tests.png)
+
+## 8. Choice of the task tool
+
+I choose just.
+
+Installing the project takes about the same time with the 4 tools, so this measurement cannot separate them. But just runs the task the fastest: 0.26 s in `user` time, against 0.37 s for Taskipy and Poe the Poet, and 0.41 s for Invoke.
+
+My final choice is uv for dependencies and just for tasks.
