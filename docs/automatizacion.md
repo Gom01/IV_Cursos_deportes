@@ -107,3 +107,15 @@ Screenshots of the measurements:
 ![poetry1](../img/poetry1.png)
 
 My network was not stable during the tests. For example, installing Hatch took between 35 s and 179 s depending on the attempt, while its `user` time stayed between 6.1 s and 6.8 s. The `user` time barely depends on the network, so I mostly compare the tools with it.
+
+## 6. Choice
+
+I choose uv.
+
+In `user` time, uv + Poe the Poet is clearly the fastest: 2.86 s, about three times less than PDM (8.41 s). Hatch and Poetry come last.
+
+In `real` time, uv and PDM are almost tied (29.74 s and 28.38 s), but my network was too unstable to tell them apart.
+
+PDM handles both dependencies and tasks, while uv needs a second tool. Even so, uv + Poe the Poet installs faster than PDM alone (1.70 s against 5.05 s in `user` time).
+
+I picked Poe the Poet without comparing it with anything else, so I compare the task tools in part 7.
