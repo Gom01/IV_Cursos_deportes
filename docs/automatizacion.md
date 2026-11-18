@@ -58,8 +58,28 @@ Conditions:
 - I clear the caches before each attempt, so the times include the downloads;
 - 5 attempts per measurement, I keep the average;
 - the `time` command gives two times, and I record both: the real time (`real`) and the tool's computing time (`user`).
+- the project has no code yet, so I use one minimal test, so that pytest really runs.
 
 So that the 4 tools do the same work, I told them not to install the project as a package, because it is not one.
+
+I use this script for all the measurements:
+```bash
+export PATH=/tmp/outil/bin:$PATH
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+TIMEFORMAT='real %R s   user %U s'
+
+for i in 1 2 3 4 5; do
+  echo "=== Attempt $i ==="
+  rm -rf ~/.cache ~/.local/share/hatch /tmp/outil .venv *.lock
+  /usr/bin/python3 -m venv /tmp/outil
+
+  echo -n "Install the tool:  "
+  time pip install -q $1 > /dev/null 2>&1
+
+  echo -n "Project + task:    "
+  time bash -c "$2" > log.txt 2>&1
+done
+```
 
 ## 5. Results
 
