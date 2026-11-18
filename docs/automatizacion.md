@@ -90,7 +90,7 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 | PDM | 2.29.7 | 22.42 / 5.05 | 5.96 / 3.36 | 28.38 / 8.41 |
 | Hatch | 1.18.2 | 80.27 / 6.53 | 4.58 / 2.99 | 84.85 / 9.52 |
 | uv + Poe the Poet | 0.13.9 + 0.49.0 | 26.73 / 1.70 | 3.01 / 1.16 | 29.74 / 2.86 |
-| Poetry + Poe the Poet | | / | / | / |
+| Poetry + Poe the Poet | 2.5.1 + 0.49.0 | 70.87 / 7.72 | 6.00 / 2.64 | 76.87 / 10.36 |
 
 Screenshots of the measurements:
 
