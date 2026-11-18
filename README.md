@@ -96,7 +96,6 @@ Many runners and hikers all over Switzerland have the same need and use the same
 - [GitHub configuration](img/ssh_github.png)
 - [SSH configuration](img/ssh_test.png)
 
-## Installation and tasks
 
 ### Requirements
 
@@ -106,6 +105,8 @@ They only need to be installed once, outside the project:
 - uv (dependency manager) and just (task tool):
 
   ```bash
+  git clone https://github.com/Gom01/IV_Cursos_deportes.git
+  cd IV_Cursos_deportes
   pip install uv rust-just
   ```
 
