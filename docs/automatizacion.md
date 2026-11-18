@@ -119,3 +119,37 @@ In `real` time, uv and PDM are almost tied (29.74 s and 28.38 s), but my network
 PDM handles both dependencies and tasks, while uv needs a second tool. Even so, uv + Poe the Poet installs faster than PDM alone (1.70 s against 5.05 s in `user` time).
 
 I picked Poe the Poet without comparing it with anything else, so I compare the task tools in part 7.
+
+## 7. Task tool compatible with uv
+
+A list of different tools can be found here : 
+- https://scientific-python-cookie.readthedocs.io/en/latest/guides/tasks/
+- https://github.com/astral-sh/uv/issues/5903
+
+| Tool | Kept? | Reason |
+|---|---|---|
+| Poe the Poet | Yes | Python package, installed by uv |
+| Taskipy | Yes | Python package, installed by uv |
+| just | Yes | On PyPI (`rust-just`), installed by uv |
+| Invoke | Yes | Python package, installed by uv |
+| uv-tasks | No | Alpha on PyPI, not stable |
+| rake | No | For Ruby, not Python |
+| make | No | Not a Python package |
+| mise | No | Not a Python package |
+| nox | No | Runs tasks in its own separate environments, even with uv |
+| tox | No | Runs tasks in its own separate environments, even with uv |
+
+### Test
+
+I use the same conditions and script as in part 4. Each task tool is added to the `dev` group with pytest, then I measure `uv sync` and the `test` task.
+
+### Results
+
+Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real` / `user` time, in seconds.
+
+| Tool | Version | Install the project + run the task |
+|---|---|---|
+| Poe the Poet | | / |
+| Taskipy | | / |
+| just | | / |
+| Invoke | | / |
