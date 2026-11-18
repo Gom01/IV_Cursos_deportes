@@ -87,7 +87,7 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 
 | Tool | Version | Install the tool | Install the project + run the task | Total |
 |---|---|---|---|---|
-| PDM | | / | / | / |
+| PDM | 2.29.7 | 22.42 / 5.05 | 5.96 / 3.36 | 28.38 / 8.41 |
 | Hatch | | / | / | / |
 | uv + Poe the Poet | | / | / | / |
 | Poetry + Poe the Poet | | / | / | / |
@@ -95,18 +95,14 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 Screenshots of the measurements:
 
 ### 5.1 PDM
-![PDM1](../img/PDM1.png)
-![PDM2](../img/PDM2.png)
-
+![PDM1](../img/pdm1.png)
 
 ### 5.2 Hatch
 ![Hatch1](../img/hatch1.png)
-![Hatch2](../img/hatch2.png)
 
 ### 5.3 uv + Poe the Poet
 ![uv1](../img/uv1.png)
-![uv2](../img/uv2.png)
 
 ### 5.4 Poetry + Poe the Poet
 ![poetry1](../img/poetry1.png)
-![poetry2](../img/poetry2.png)
+
