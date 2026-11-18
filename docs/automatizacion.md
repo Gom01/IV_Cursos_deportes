@@ -89,7 +89,7 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 |---|---|---|---|---|
 | PDM | 2.29.7 | 22.42 / 5.05 | 5.96 / 3.36 | 28.38 / 8.41 |
 | Hatch | 1.18.2 | 80.27 / 6.53 | 4.58 / 2.99 | 84.85 / 9.52 |
-| uv + Poe the Poet | | / | / | / |
+| uv + Poe the Poet | 0.13.9 + 0.49.0 | 26.73 / 1.70 | 3.01 / 1.16 | 29.74 / 2.86 |
 | Poetry + Poe the Poet | | / | / | / |
 
 Screenshots of the measurements:
@@ -106,3 +106,4 @@ Screenshots of the measurements:
 ### 5.4 Poetry + Poe the Poet
 ![poetry1](../img/poetry1.png)
 
+My network was not stable during the tests. For example, installing Hatch took between 35 s and 179 s depending on the attempt, while its `user` time stayed between 6.1 s and 6.8 s. The `user` time barely depends on the network, so I mostly compare the tools with it.
