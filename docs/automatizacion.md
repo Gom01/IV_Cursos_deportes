@@ -151,7 +151,7 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 |---|---|---|
 | Poe the Poet | 0.49.0 | 2.89 / 1.22 |
 | Taskipy | 1.14.1 | 2.80 / 1.15 |
-| just | | / |
+| just | 1.59.0 | 3.18 / 1.12 |
 | Invoke | | / |
 
 Screenshots of the measurements:
@@ -161,3 +161,6 @@ Screenshots of the measurements:
 
 ### 7.1 Taskipy
 ![Taskipy1](../img/taskipy1.png)
+
+### 7.2 Just
+![Jus1](../img/just1.png)
