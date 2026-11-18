@@ -149,7 +149,12 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 
 | Tool | Version | Install the project + run the task |
 |---|---|---|
-| Poe the Poet | | / |
+| Poe the Poet | 0.49.0 | 2.89 / 1.22 |
 | Taskipy | | / |
 | just | | / |
 | Invoke | | / |
+
+Screenshots of the measurements:
+
+### 7.1 POE
+![POE1](../img/poe1.png)
