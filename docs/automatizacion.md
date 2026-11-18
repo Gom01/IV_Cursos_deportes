@@ -46,7 +46,7 @@ For each tool, I measure two times:
 1. the time to install the tool with `pip install`;
 2. the time to install the project and run the `test` task, which runs `pytest`:
 	- 2.1 create the virtual environment (`.venv`);
-	- 2.2 read the dependencies in `pyproject.toml`
+	- 2.2 read the dependencies in `pyproject.toml`;
 	- 2.3 resolve the versions and write the lockfile (`uv.lock`, `pdm.lock`, ...);
 	- 2.4 download and install the packages;
 	- 2.5 run the `test` task.
@@ -57,7 +57,8 @@ Conditions:
 - each tool starts from a copy of the project with the same `pyproject.toml`;
 - I clear the caches before each attempt, so the times include the downloads;
 - 5 attempts per measurement, I keep the average;
-- the `time` command gives two times, and I record both: the real time (`real`) and the tool's computing time (`user`).
+- the `time` command gives two times, and I record both: the real time (`real`) and the tool's computing time (`user`);
+- Hatch does not create a lockfile, so step 2.3 does not apply to it;
 - the project has no code yet, so I use one minimal test, so that pytest really runs.
 
 So that the 4 tools do the same work, I told them not to install the project as a package, because it is not one.
@@ -80,6 +81,8 @@ for i in 1 2 3 4 5; do
   time bash -c "$2" > log.txt 2>&1
 done
 ```
+
+I run it with the packages to install and the task command, for example: `./mesure.sh "pdm" "pdm install && pdm run test"`.
 
 ## 5. Results
 
@@ -120,9 +123,9 @@ PDM handles both dependencies and tasks, while uv needs a second tool. Even so, 
 
 I picked Poe the Poet without comparing it with anything else, so I compare the task tools in part 7.
 
-## 7. Task tool compatible with uv
+## 7. Task tool
 
-A list of different tools can be found here : 
+A list of different tools can be found here:
 - https://scientific-python-cookie.readthedocs.io/en/latest/guides/tasks/
 - https://github.com/astral-sh/uv/issues/5903
 
@@ -156,28 +159,17 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 
 Screenshots of the measurements:
 
-### 7.1 POE
-![POE1](../img/poe1.png)
+### 7.1 Poe the Poet
+![Poe1](../img/poe1.png)
 
-### 7.1 Taskipy
+### 7.2 Taskipy
 ![Taskipy1](../img/taskipy1.png)
 
-### 7.2 Just
+### 7.3 just
 ![Just1](../img/just1.png)
 
-### 7.3 Invoke
+### 7.4 Invoke
 ![Invoke1](../img/invoke1.png)
-
-### Results
-
-Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real` / `user` time, in seconds.
-
-| Tool | Version | Install the project + run the task |
-|---|---|---|
-| Poe the Poet | 0.49.0 | 2.89 / 1.22 |
-| Taskipy | 1.14.1 | 2.80 / 1.15 |
-| just | 1.59.0 | 3.18 / 1.12 |
-| Invoke | 3.0.3 | 2.67 / 1.22 |
 
 The results are almost the same: the difference is about 0.1 s in `user` time, which is less than the variation between attempts. So I also measure the time to run the `test` task alone, with the project already installed. This matters because the task is run much more often than the installation.
 
