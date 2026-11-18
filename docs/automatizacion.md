@@ -88,7 +88,7 @@ Measurements from 18 November 2026, average of 5 attempts. Each cell shows `real
 | Tool | Version | Install the tool | Install the project + run the task | Total |
 |---|---|---|---|---|
 | PDM | 2.29.7 | 22.42 / 5.05 | 5.96 / 3.36 | 28.38 / 8.41 |
-| Hatch | | / | / | / |
+| Hatch | 1.18.2 | 80.27 / 6.53 | 4.58 / 2.99 | 84.85 / 9.52 |
 | uv + Poe the Poet | | / | / | / |
 | Poetry + Poe the Poet | | / | / | / |
 
