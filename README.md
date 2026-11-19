@@ -1,46 +1,46 @@
-# Rutas de senderismo a medida en Suiza
+# Custom hiking routes in Switzerland
 
-## Problema
+## Problem
 
-Corro en Suiza y me gusta entrenar de forma progresiva, muchas veces en sitios que no conozco. Siempre sé exactamente la distancia que quiero hacer, el desnivel y el punto de salida y de llegada (en transporte público). Por ejemplo, sé que quiero correr 17 km con 800 m de desnivel, que salgo de una estación concreta y que llego a otra estación (que puede ser la misma). Mi problema es que pierdo mucho tiempo creando un recorrido que encaje con lo que quiero.
+I run in Switzerland and I like to train progressively, often in places I don't know. I always know exactly the distance I want to do, the elevation gain, and the start and end points (by public transport). For example, I know I want to run 17 km with 800 m of elevation gain, starting from a specific station and arriving at another station (which can be the same one). My problem is that I lose a lot of time creating a route that fits what I want.
 
-Ahora mismo, para preparar un recorrido tengo que:
+Right now, to prepare a route I have to:
 
-1. Ir a [map.geo.admin.ch](https://map.geo.admin.ch/) de swisstopo y dibujar un recorrido a mano, tramo por tramo, empezando en una estación de tren o una parada de autobús y terminando en otra parada.
-2. Mirar la distancia y el desnivel del recorrido. Si no son los que quiero, añado o quito tramos y vuelvo a mirar. Muchas veces tengo que repetirlo varias veces.
+1. Go to swisstopo's [map.geo.admin.ch](https://map.geo.admin.ch/) and draw a route by hand, section by section, starting at a train station or a bus stop and ending at another stop.
+2. Check the distance and elevation gain of the route. If they are not what I want, I add or remove sections and check again. I often have to repeat this several times.
 
-Este proceso me hace perder mucho tiempo (unas 2 o 3 horas por semana): tengo que dibujar el recorrido a mano y después cambiarlo hasta que tenga la distancia y la dificultad que quiero. Como corro 2 o 3 veces por semana, pierdo mucho tiempo haciendo estos cálculos, y creo que no soy el único. Además, prefiero usar los datos de swisstopo porque son suizos, oficiales y fiables.
+This process makes me lose a lot of time (about 2 or 3 hours per week): I have to draw the route by hand and then change it until it has the distance and difficulty I want. Since I run 2 or 3 times a week, I lose a lot of time doing these calculations, and I don't think I'm the only one. Also, I prefer to use swisstopo data because it is Swiss, official and reliable.
 
-## Conceptos
+## Concepts
 
-- **Trail:** correr por caminos de montaña o de campo, no por carretera. Normalmente hay subidas y bajadas.
-- **Distancia:** los kilómetros que tiene el recorrido.
-- **Desnivel positivo:** la suma de todos los metros que se suben durante el recorrido. Las bajadas no se cuentan. Por ejemplo, si subo 300 m, bajo 100 m y subo otra vez 200 m, el desnivel positivo es 500 m.
-- **Dificultad:** en Suiza, cada camino tiene una categoría oficial, marcada con colores en las señales:
-  - *Wanderweg* (amarillo): camino fácil, para todo el mundo.
-  - *Bergwanderweg* (blanco-rojo-blanco): camino de montaña, más empinado y estrecho. Hay que tener buen equilibrio.
-  - *Alpinwanderweg* (blanco-azul-blanco): camino alpino, muy difícil. A veces hay que usar las manos.
-- **Tramo:** un trozo de camino entre dos cruces. Los datos oficiales dan los caminos en tramos, no en recorridos completos.
-- **Recorrido:** varios tramos seguidos, desde la salida hasta la llegada.
+- **Trail:** running on mountain or country paths, not on roads. There are usually ups and downs.
+- **Distance:** the number of kilometres of the route.
+- **Positive elevation gain:** the sum of all the metres climbed during the route. Descents are not counted. For example, if I climb 300 m, go down 100 m and climb another 200 m, the positive elevation gain is 500 m.
+- **Difficulty:** in Switzerland, each path has an official category, marked with colours on the signs:
+  - *Wanderweg* (yellow): easy path, for everyone.
+  - *Bergwanderweg* (white-red-white): mountain path, steeper and narrower. You need good balance.
+  - *Alpinwanderweg* (white-blue-white): alpine path, very difficult. Sometimes you have to use your hands.
+- **Section:** a piece of path between two junctions. The official data gives the paths as sections, not as complete routes.
+- **Route:** several sections in a row, from the start to the finish.
 
-## Datos
+## Data
 
-### 1. Caminos de senderismo (swissTLM3D Wanderwege)
+### 1. Hiking paths (swissTLM3D Wanderwege)
 
-Fuente: [opendata.swiss](https://opendata.swiss/fr/dataset/swisstlm3d-wanderwege/resource/e1b5fac2-fedf-42d4-a2e4-27287c02504b) ([descargar zip](https://data.geo.admin.ch/ch.swisstopo.swisstlm3d-wanderwege/swisstlm3d-wanderwege/swisstlm3d-wanderwege_2056_5728.gpkg.zip))
+Source: [opendata.swiss](https://opendata.swiss/fr/dataset/swisstlm3d-wanderwege/resource/e1b5fac2-fedf-42d4-a2e4-27287c02504b) ([download zip](https://data.geo.admin.ch/ch.swisstopo.swisstlm3d-wanderwege/swisstlm3d-wanderwege/swisstlm3d-wanderwege_2056_5728.gpkg.zip))
 
-- Formato: es una base de datos (tipo SQLite) guardada en un solo fichero. Dentro hay una tabla, y cada fila de la tabla es un tramo de camino.
-- La posición de cada tramo (la columna `geometry`) no está escrita como texto, sino en binario. Es una pequeña cabecera de GeoPackage seguida de un formato llamado WKB. Para leerla, abriré la base con el módulo `sqlite3`, que viene incluido en Python, y escribiré yo mismo el código que quita la cabecera y convierte el binario en una lista de puntos (x, y, z).
-- Número de filas: 409 276, es decir, 409 276 tramos.
-- Licencia: uso libre, pero es obligatorio citar la fuente (autor, título y enlace a los datos).
+- Format: it is a database (SQLite type) stored in a single file. Inside there is a table, and each row of the table is a path section.
+- The position of each section (the `geometry` column) is not written as text, but in binary. It is a small GeoPackage header followed by a format called WKB. To read it, I will open the database with the `sqlite3` module, which comes with Python, and I will write the code myself that removes the header and converts the binary into a list of points (x, y, z).
+- Number of rows: 409 276, that is, 409 276 sections.
+- License: free to use, but citing the source (author, title and link to the data) is mandatory.
 
-Columnas que uso:
+Columns I use:
 
-- `uuid`: identificador único de cada tramo. Me sirve para saber qué tramos forman un recorrido.
-- `wanderwege`: categoría oficial de dificultad del tramo (Wanderweg, Bergwanderweg o Alpinwanderweg). Me sirve para no proponer caminos más difíciles de lo que pide el usuario.
-- `geometry`: lista de puntos (x, y, z) del tramo. x e y son coordenadas LV95 (el sistema oficial de Suiza, en metros) y z es la altitud. Me sirve para calcular la distancia y el desnivel, y para saber qué tramos se tocan.
+- `uuid`: unique identifier of each section. It helps me know which sections make up a route.
+- `wanderwege`: official difficulty category of the section (Wanderweg, Bergwanderweg or Alpinwanderweg). It helps me avoid proposing paths that are more difficult than what the user asks for.
+- `geometry`: list of points (x, y, z) of the section. x and y are LV95 coordinates (the official Swiss system, in metres) and z is the altitude. It helps me calculate the distance and the elevation gain, and know which sections touch each other.
 
-Ejemplo (la columna `geometry` ya decodificada):
+Example (the `geometry` column already decoded):
 
 | uuid | wanderwege | geometry |
 |:---|:---|:---|
@@ -49,21 +49,21 @@ Ejemplo (la columna `geometry` ya decodificada):
 | {67CFA3B2-1E89-4CF7-8CE0-2FE7E1894161} | Wanderweg | LINESTRING Z (2632948.242 1166916.728003 597.922, 2632942.35… |
 | {19AE62E9-A3F2-42AA-BB77-9864D424202C} | Wanderweg | LINESTRING Z (2689383.021 1246142.787996 643.166, 2689379.20… |
 
-### 2. Paradas de transporte público (Traffic Points)
+### 2. Public transport stops (Traffic Points)
 
-Fuente: [opentransportdata.swiss](https://data.opentransportdata.swiss/en/dataset/traffic-point-v2) ([descargar csv](https://data.opentransportdata.swiss/dataset/b06d90be-91c6-440e-ab97-09f579d2fad0/resource/49566b25-e2df-4211-b628-9ada782a512a/download/actual-date-world-traffic-point.csv))
+Source: [opentransportdata.swiss](https://data.opentransportdata.swiss/en/dataset/traffic-point-v2) ([download csv](https://data.opentransportdata.swiss/dataset/b06d90be-91c6-440e-ab97-09f579d2fad0/resource/49566b25-e2df-4211-b628-9ada782a512a/download/actual-date-world-traffic-point.csv))
 
-- Formato: CSV separado por `;`. Puedo leerlo con el módulo `csv`, que viene incluido en Python.
-- Número de filas: 62 275 (cada fila es un andén; una misma parada puede tener varias filas).
-- Licencia: uso libre, pero es obligatorio citar la fuente.
+- Format: CSV separated by `;`. I can read it with the `csv` module, which comes with Python.
+- Number of rows: 62 275 (each row is a platform; the same stop can have several rows).
+- License: free to use, but citing the source is mandatory.
 
-Columnas que uso:
+Columns I use:
 
-- `designationOfficial`: nombre de la parada. Esto me permite encontrar la parada que el usuario indica como punto de partida y de llegada.
-- `lv95East`, `lv95North`: coordenadas LV95 de la parada, en el mismo sistema que los caminos. Me sirven para calcular la distancia entre la parada y el inicio o el final del recorrido.
-- `uicCountryCode`: código del país (85 = Suiza). Me sirve para quitar las paradas que no están en Suiza.
+- `designationOfficial`: name of the stop. It lets me find the stop that the user gives as the start and end point.
+- `lv95East`, `lv95North`: LV95 coordinates of the stop, in the same system as the paths. They help me calculate the distance between the stop and the start or end of the route.
+- `uicCountryCode`: country code (85 = Switzerland). It helps me remove the stops that are not in Switzerland.
 
-Ejemplo:
+Example:
 
 | designationOfficial | lv95East | lv95North | uicCountryCode |
 |:---|---:|---:|---:|
@@ -71,27 +71,55 @@ Ejemplo:
 | Zug, Kistenfabrik | 2681910.0 | 1226157.0 | 85 |
 | Wädenswil, Burstel | – | – | 85 |
 
-Hay que limpiar algunos datos porque faltan valores. Por ejemplo, algunas paradas no tienen posición (como Wädenswil, Burstel) y hay que descartarlas.
+Some data has to be cleaned because values are missing. For example, some stops have no position (like Wädenswil, Burstel) and must be discarded.
 
-## Análisis
+## Analysis
 
-Los caminos de estos ficheros son solo tramos sueltos, no recorridos completos. Pero se tocan en los cruces, y así forman una red. Hay más de 400 000 tramos, así que es imposible probar todas las combinaciones posibles, ni a mano ni con un ordenador. Hace falta un método que empiece en la estación de salida y termine en la estación de llegada, construyendo el recorrido tramo por tramo y siguiendo la red. En cada paso, calcula la distancia, el desnivel y la dificultad que ya lleva, y descarta enseguida los recorridos que ya no encajan con mis criterios (demasiado largos, con demasiado desnivel o demasiado difíciles). Al final, se queda con los recorridos que llegan a la estación de llegada con la distancia y el desnivel pedidos, y elige los mejores.
+The paths in these files are only separate sections, not complete routes. But they touch each other at junctions, and that way they form a network. There are more than 400 000 sections, so it is impossible to try every possible combination, by hand or with a computer. We need a method that starts at the departure station and ends at the arrival station, building the route section by section and following the network. At each step, it calculates the distance, elevation gain and difficulty so far, and immediately discards the routes that no longer match my criteria (too long, too much elevation gain or too difficult). At the end, it keeps the routes that reach the arrival station with the requested distance and elevation gain, and chooses the best ones.
 
-## ¿Por qué en la nube?
+## Why in the cloud?
 
-Muchos corredores y senderistas de toda Suiza tienen la misma necesidad y usan los mismos datos oficiales. Además, hay muchísimos datos (cientos de miles de tramos y de puntos en el mapa), así que tiene sentido tenerlos en un solo sitio, compartido por todos.
+Many runners and hikers all over Switzerland have the same need and use the same official data. Also, there is a huge amount of data (hundreds of thousands of sections and points on the map), so it makes sense to keep it in a single place, shared by everyone.
 
-## Planificación
+## Planning
 - [User journey](docs/user-journey.md)
 - [Personas](docs/personas.md)
-- [Hitos](docs/planificacion.md)
-- [Historia de usarios](docs/historias-de-usuario.md)
+- [Milestones](docs/planificacion.md)
+- [User stories](docs/historias-de-usuario.md)
 
-## Tarjeta de rol
+## Role card
 
-- [Fotografía de la tarjeta de rol](img/tarjeta.jpg)
+- [Photo of the role card](img/tarjeta.jpg)
 
-## Documentación adicional
+## Additional documentation
 
-- [configuración de GitHub](img/ssh_github.png)
-- [configuración de SSH](img/ssh_test.png)
+- [GitHub configuration](img/ssh_github.png)
+- [SSH configuration](img/ssh_test.png)
+
+
+### Requirements
+
+They only need to be installed once, outside the project:
+
+- Python 3.14.
+- uv (dependency manager) and just (task tool):
+
+  ```bash
+  git clone https://github.com/Gom01/IV_Cursos_deportes.git
+  cd IV_Cursos_deportes
+  pip install uv rust-just
+  ```
+
+### Tasks
+
+```bash
+just install
+just test
+just check
+```
+
+- `just install`: creates the virtual environment and installs the development dependencies, with the versions pinned in `uv.lock`.
+- `just test`: runs the tests with pytest. There are no tests at the moment.
+- `just check`: only checks the syntax of the code, including the model entities. It compiles the files without running them, so it detects syntax errors without launching the program.
+
+- [docs/automatizacion.md](docs/automatizacion.md)

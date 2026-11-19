@@ -1,0 +1,5 @@
+lenguaje: python
+entidad: src/cursodeportes/red_senderos.py
+automatizar:
+  fichero: justfile
+  orden: just
