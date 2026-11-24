@@ -6,4 +6,4 @@ from cursodeportes.tramo import Tramo
 
 @dataclass(frozen=True, eq=True)
 class Recorrido:
-    _tramos: tuple[Tramo, ...]
+    _tramos_: tuple[Tramo, ...]
