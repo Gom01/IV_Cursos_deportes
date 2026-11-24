@@ -93,8 +93,8 @@ Many runners and hikers all over Switzerland have the same need and use the same
 
 ## Additional documentation
 
-- [GitHub configuration](img/ssh_github.png)
-- [SSH configuration](img/ssh_test.png)
+- [GitHub Configuración](img/ssh_github.png)
+- [SSH Configuración](img/ssh_test.png)
 
 
 ### Requirements
