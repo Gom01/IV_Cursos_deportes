@@ -97,7 +97,7 @@ Each cell shows `real` / `user` time, in seconds.
 
 | Tool | Version | Installation of the tool | Installation of the project |
 |---|---|---|---|
-| uv |  |  /  |  /  |
+| uv | 0.13.10 | 9.47 / 1.03 | 4.62 / 2.03 |
 | PDM |  |  /  |  /  |
 | Poetry |  |  /  |  /  |
 | Hatch |  |  /  |  /  |
