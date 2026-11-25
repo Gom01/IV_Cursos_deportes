@@ -207,3 +207,9 @@ Screenshots of the measurements:
 ![Invoke](../img/invoke.png)
 
 ### 3.6 Choice
+
+I will choose just.
+
+just is the fastest in the table, because it runs the task in 0.56 s in `real` time and 0.47 s in `user` time.
+
+just is the fastest in both `real` and `user` time, so the result does not depend on which one I look at.
