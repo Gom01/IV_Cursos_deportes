@@ -188,7 +188,7 @@ Measurements from 25 of november 2026, average of 5 attempts. Each cell shows `r
 | Tool | Version | Run the task |
 |---|---|---|
 | Poe the Poet | 0.49.0 | 0.68 / 0.57 |
-| Taskipy |  |  /  |
+| Taskipy | 1.14.1 | 0.82 / 0.60 |
 | just |  |  /  |
 | Invoke |  |  /  |
 
