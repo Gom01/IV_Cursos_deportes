@@ -9,7 +9,7 @@ For my project I need to find a task manager and a dependency manager (Python 3.
 
 ### 2.1 Requirements
 
-The tools I need should follow the Python standards. As the course guide says: "Si hay un estándar, primero hay que conocerlo; a continuación simplemente hay que seguirlo y adaptar el resto de los criterios al mismo."
+The tools I need should follow the Python standards, because it's the language I'm using for my project. As the course guide says: "Si hay un estándar, primero hay que conocerlo; a continuación simplemente hay que seguirlo y adaptar el resto de los criterios al mismo."
 
 - The Python standard for describing a project is the `pyproject.toml` file.
 - Dependencies go in `[project]` (PEP 621) and development dependencies in `[dependency-groups]` (PEP 735).
@@ -93,11 +93,9 @@ For example, I use it like this with uv: `./mesure.sh "curl -LsSf https://astral
 Measurements from 25 November 2026, average of 5 attempts.
 Each cell shows `real` / `user` time, in seconds.
 
-| Tool | Version | Installation of the tool | Installation of the project |
-|---|---|---|---|
-| uv | 0.13.10 | 9.47 / 1.03 | 4.62 / 2.03 |
-| PDM | 2.29.7 | 46.30 / 15.55 | 7.61 / 5.66 |
-| Poetry | 2.5.2 | 36.70 / 18.30 | 5.16 / 2.57 |
+- uv 0.13.10: installation of the tool 9.47 s / 1.03 s, installation of the project 4.62 s / 2.03 s
+- PDM 2.29.7: installation of the tool 46.30 s / 15.55 s, installation of the project 7.61 s / 5.66 s
+- Poetry 2.5.2: installation of the tool 36.70 s / 18.30 s, installation of the project 5.16 s / 2.57 s
 
 Screenshots of the measurements:
 
@@ -115,12 +113,8 @@ Screenshots of the measurements:
 I will choose uv.
 
 uv is the fastest tool that I measured, for both criteria.
-
-To install the tool, uv is about 4 times faster in `real` time, and about 15 times faster in `user` time.
-
-To install the project, the difference is smaller here, but uv is still the fastest.
-
-uv is the fastest in both `real` and `user` time, so the result does not depend on which one I look at.
+- To install the tool, uv is about 4 times faster in `real` time, and about 15 times faster in `user` time.
+- To install the project, the difference is smaller here, but uv is still the fastest.
 
 In the next section I will look for a task tool to use with uv, because we can see that uv is much faster. With PDM I would only need one tool, but the problem is that it takes too much time compared to uv.
 
@@ -183,14 +177,12 @@ For example, I use it like this with Poe the Poet: `./mesure_tasks.sh "uv run --
 
 ### 3.5 Results
 
-Measurements from 25 of november 2026, average of 5 attempts. Each cell shows `real` / `user` time, in seconds.
+Measurements from 26 of november 2026, average of 5 attempts. Each values shows `real` / `user` time, in seconds.
 
-| Tool | Version | Run the task |
-|---|---|---|
-| Poe the Poet | 0.49.0 | 0.68 / 0.57 |
-| Taskipy | 1.14.1 | 0.82 / 0.60 |
-| just | 1.59.0 | 0.56 / 0.47 |
-| Invoke | 3.0.3 | 0.85 / 0.73 |
+- Poe the Poet 0.49.0: 0.68 s / 0.57 s
+- Taskipy 1.14.1: 0.82 s / 0.60 s
+- just 1.59.0: 0.56 s / 0.47 s
+- Invoke 3.0.3: 0.85 s / 0.73 s
 
 Screenshots of the measurements:
 
@@ -210,6 +202,6 @@ Screenshots of the measurements:
 
 I will choose just.
 
-just is the fastest in the table, because it runs the task in 0.56 s in `real` time and 0.47 s in `user` time.
+just is the fastest, because it runs the task in 0.56 s in `real` time and 0.47 s in `user` time.
 
 just is the fastest in both `real` and `user` time, so the result does not depend on which one I look at.
