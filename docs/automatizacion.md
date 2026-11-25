@@ -112,8 +112,17 @@ Screenshots of the measurements:
 
 
 ### 2.6 Choice
+I will choose uv.
 
+uv is the fastest tool that I measured, for both criteria.
 
+To install the tool, uv is about 4 times faster in `real` time, and about 15 times faster in `user` time.
+
+To install the project, the difference is smaller here, but uv is still the fastest.
+
+uv is the fastest in both `real` and `user` time, so the result does not depend on which one I look at.
+
+In the next section I will look for a task tool to use with uv, because we can see that uv is much faster. With PDM I would only need one tool, but the problem is that it takes too much time compared to uv.
 
 <! TODO Correct next part !>
 ## 7. Task tool
