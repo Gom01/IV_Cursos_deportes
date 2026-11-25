@@ -16,7 +16,7 @@ The tools I need should follow the Python standards. As the course guide says: "
 	- https://packaging.python.org/en/latest/flow/
 	- https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
 
-All the tools that I will use are reproducible, because they all use a lock file (`uv.lock`, `pdm.lock`, `poetry.lock`, Hatch only if locking is enabled).
+All the tools that I will use are reproducible, because they all use a lock file (`uv.lock`, `pdm.lock`, `poetry.lock`).
 
 
 ### 2.2 Criteria
@@ -34,7 +34,6 @@ I took the list from the official Python guide: https://packaging.python.org/en/
 
 - Poetry: https://python-poetry.org/docs/
 - PDM: https://pdm-project.org/en/latest/
-- Hatch: https://hatch.pypa.io/latest/
 - uv: https://docs.astral.sh/uv/
 
 ### 2.4 Test scenario
@@ -45,20 +44,17 @@ For each tool, I measure two times:
 	- uv: `curl -LsSf https://astral.sh/uv/install.sh | sh`
 	- Poetry: `curl -sSL https://install.python-poetry.org | python3 -`
 	- PDM: `curl -sSL https://pdm-project.org/install.sh | bash`
-	- Hatch: `pip install hatch`
 2. the time to install the project:
 	- a. create the virtual environment (`.venv`);
 	- b. read the dependencies in `pyproject.toml`;
-	- c. resolve the versions and write the lockfile (`uv.lock`, `pdm.lock`, `poetry.lock`, `pylock.toml`);
+	- c. resolve the versions and write the lockfile (`uv.lock`, `pdm.lock`, `poetry.lock`);
 	- d. download and install the packages.
 
-So that the 4 tools do the same work, I told them not to install the project as a package, because it is not one.
-
-For Hatch, I enable locking with `lock-envs = true` in the `[tool.hatch]` section of `pyproject.toml`, so that it also writes a lockfile and the 4 tools do the same work.
+So that the 3 tools do the same work, I told them not to install the project as a package, because it is not one.
 
 
 Conditions:
-- same computer, same network, all 4 tools on the same day;
+- same computer, same network, all 3 tools on the same day;
 - WSL (Ubuntu 26.04.1) with Python 3.14.4, because CI and containers will run on Linux;
 - each tool starts from a copy of the project with the same `pyproject.toml`;
 - each attempt uses a new empty home directory;
@@ -77,7 +73,7 @@ for i in 1 2 3 4 5; do
   echo "=== Attempt $i ==="
   export HOME=$(mktemp -d)
   export PATH=$HOME/.local/bin:/tmp/outil/bin:/usr/local/bin:/usr/bin:/bin
-  rm -rf /tmp/outil .venv *.lock pylock*.toml
+  rm -rf /tmp/outil .venv *.lock
   /usr/bin/python3 -m venv /tmp/outil
 
   echo -n "Install the tool:     "
@@ -86,9 +82,11 @@ for i in 1 2 3 4 5; do
   echo -n "Install the project:  "
   time bash -c "$2" > log.txt 2>&1
 done
+echo -n "Version: "
+bash -c "$3"
 ```
 
-For example, I use it like this with uv: `./mesure.sh "curl -LsSf https://astral.sh/uv/install.sh | sh" "uv sync"`
+For example, I use it like this with uv: `./mesure.sh "curl -LsSf https://astral.sh/uv/install.sh | sh" "uv sync" "uv --version"`
 
 ### 2.5 Results
 
@@ -100,20 +98,16 @@ Each cell shows `real` / `user` time, in seconds.
 | uv | 0.13.10 | 9.47 / 1.03 | 4.62 / 2.03 |
 | PDM | 2.29.7 | 46.30 / 15.55 | 7.61 / 5.66 |
 | Poetry | 2.5.2 | 36.70 / 18.30 | 5.16 / 2.57 |
-| Hatch |  |  /  |  /  |
 
 Screenshots of the measurements:
 
 #### 2.5.1 PDM
 ![PDM1](../img/pdm1.png)
 
-#### 2.5.2 Hatch
-![Hatch1](../img/hatch1.png)
-
-#### 2.5.3 uv
+#### 2.5.2 uv
 ![uv1](../img/uv1.png)
 
-#### 2.5.4 Poetry
+#### 2.5.3 Poetry
 ![poetry1](../img/poetry1.png)
 
 
