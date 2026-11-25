@@ -99,7 +99,7 @@ Each cell shows `real` / `user` time, in seconds.
 |---|---|---|---|
 | uv | 0.13.10 | 9.47 / 1.03 | 4.62 / 2.03 |
 | PDM | 2.29.7 | 46.30 / 15.55 | 7.61 / 5.66 |
-| Poetry |  |  /  |  /  |
+| Poetry | 2.5.2 | 36.70 / 18.30 | 5.16 / 2.57 |
 | Hatch |  |  /  |  /  |
 
 Screenshots of the measurements:
