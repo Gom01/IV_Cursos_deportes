@@ -100,13 +100,13 @@ Each cell shows `real` / `user` time, in seconds.
 Screenshots of the measurements:
 
 #### 2.5.1 PDM
-![PDM1](../img/pdm1.png)
+![PDM](../img/pdm.png)
 
 #### 2.5.2 uv
-![uv1](../img/uv1.png)
+![uv](../img/uv.png)
 
 #### 2.5.3 Poetry
-![poetry1](../img/poetry1.png)
+![poetry](../img/poetry.png)
 
 
 ### 2.6 Choice
